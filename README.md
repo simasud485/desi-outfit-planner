@@ -28,13 +28,9 @@ A smart recommendation engine that translates real-time weather data into cultur
 - Add your `OPENWEATHER_API_KEY`
 - Configure your Database settings
 
-### 3. Database Migration & Seeding
-```bash
+### 3. Database Migration, Seeding & Run Application
 php artisan migrate:fresh --seed
-Bash
-
-### 4. Run Application
-```bash
 php artisan serve
 npm run dev
-Bash
+
+
