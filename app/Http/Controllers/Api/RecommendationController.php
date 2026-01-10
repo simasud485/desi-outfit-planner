@@ -40,15 +40,16 @@ class RecommendationController extends Controller
             ->first();
 
         // DYNAMIC LOGIC: Create advice on the fly
-        $advice = "It's {$currentTemp}°C in {$weatherData['name']}. ";
+        // $advice = "It's {$currentTemp}°C in {$weatherData['name']}. ";
+        $advice = $outfit->advice;
 
-        if ($condition === 'Rain') {
-            $advice .= "Since it's raining, carry an umbrella with your {$outfit->name}.";
-        } elseif ($currentTemp < 15) {
-            $advice .= "The wind is cold today; that {$outfit->name} will keep you cozy!";
-        } else {
-            $advice .= "Enjoy the {$condition} weather!";
-        }
+        // if ($condition === 'Rain') {
+        //     $advice .= "Since it's raining, carry an umbrella with your {$outfit->name}.";
+        // } elseif ($currentTemp < 15) {
+        //     $advice .= "The wind is cold today; that {$outfit->name} will keep you cozy!";
+        // } else {
+        //     $advice .= "Enjoy the {$condition} weather!";
+        // }
 
         // Return a clean, professional JSON response
         return response()->json([
@@ -60,6 +61,7 @@ class RecommendationController extends Controller
                 'recommendation' => [
                     'outfit_name' => $outfit ? $outfit->name : 'Standard Cotton Panjabi',
                     'style' => $outfit ? $outfit->type : 'Casual',
+                    'image' => $outfit ? $outfit->image_url : null,
                     'advice' => $advice, // Now this is actually dynamic!
 
                 ],

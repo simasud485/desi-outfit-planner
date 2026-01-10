@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Outfit extends Model
 {
     //
-    protected $fillable = ['name', 'min_temp', 'max_temp', 'type', 'advice'];
+    protected $fillable = ['name', 'min_temp', 'max_temp', 'type', 'advice', 'image_url'];
 }
