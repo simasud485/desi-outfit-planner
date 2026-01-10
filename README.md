@@ -29,8 +29,8 @@ A smart recommendation engine that translates real-time weather data into cultur
 - Configure your Database settings
 
 ### 3. Database Migration, Seeding & Run Application
-php artisan migrate:fresh --seed
-php artisan serve
-npm run dev
+>php artisan migrate:fresh --seed
+>php artisan serve
+>npm run dev
 
 
